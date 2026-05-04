@@ -90,6 +90,7 @@
 
 const Room = require('../model/roomModel');
 const Hotel = require('../model/hotelModel');
+const Booking = require("../model/bookingModel");
 
 // Get all rooms
 exports.getAllRooms = async (req, res, next) => {
@@ -254,6 +255,47 @@ exports.deleteRoom = async (req, res, next) => {
     res.json({
       message: 'Room deleted successfully',
     });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+// GET /api/rooms?hotelId=&checkIn=&checkOut=
+exports.getAllRooms = async (req, res, next) => {
+  try {
+    const { hotelId, checkIn, checkOut } = req.query;
+
+    const filter = {};
+    if (hotelId) filter.hotel = hotelId;
+
+    const rooms = await Room.find(filter).populate("hotel", "name location");
+
+    // If no dates provided → return all rooms
+    if (!checkIn || !checkOut) {
+      return res.json(rooms);
+    }
+
+    const availableRooms = [];
+
+    for (let room of rooms) {
+      const bookings = await Booking.find({
+        room: room._id,
+        status: { $ne: "cancelled" },
+        $or: [
+          {
+            checkIn: { $lt: new Date(checkOut) },
+            checkOut: { $gt: new Date(checkIn) },
+          },
+        ],
+      });
+
+      if (bookings.length === 0) {
+        availableRooms.push(room);
+      }
+    }
+
+    res.json(availableRooms);
   } catch (error) {
     next(error);
   }

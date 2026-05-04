@@ -1,0 +1,426 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #111827;
+}
+
+.home-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+  min-height: 92vh;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1350&q=80');
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+
+  text-align: center;
+
+  color: white;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: bold;
+
+  line-height: 1.2;
+
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+
+  color: #e5e7eb;
+
+  margin-bottom: 40px;
+}
+
+/* =========================================
+   SEARCH BAR
+========================================= */
+
+.search-bar {
+
+  background: white;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 18px;
+
+  border-radius: 60px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
+
+  max-width: 850px;
+
+  margin: auto;
+}
+
+.search-bar input {
+
+  flex: 1;
+
+  border: none;
+
+  outline: none;
+
+  font-size: 1rem;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background: #f3f4f6;
+}
+
+.btn-search {
+
+  background: #0d6efd;
+
+  color: white;
+
+  border: none;
+
+  padding: 14px 35px;
+
+  border-radius: 40px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.btn-search:hover {
+
+  background: #0b5ed7;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   SECTION GLOBAL
+========================================= */
+
+section {
+  padding: 90px 10%;
+}
+
+.section-title {
+
+  text-align: center;
+
+  font-size: 2.5rem;
+
+  margin-bottom: 50px;
+
+  color: #111827;
+}
+
+/* =========================================
+   HIGHLIGHTS SECTION
+========================================= */
+
+.highlights {
+  background: white;
+}
+
+.highlight-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 30px;
+}
+
+.highlight-card {
+
+  background: #f9fafb;
+
+  padding: 40px 30px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.highlight-card:hover {
+
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-card i {
+
+  font-size: 3rem;
+
+  color: #0d6efd;
+
+  margin-bottom: 20px;
+}
+
+.highlight-card h3 {
+
+  font-size: 1.5rem;
+
+  margin-bottom: 15px;
+}
+
+.highlight-card p {
+
+  color: #6b7280;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   HOTEL CTA SECTION
+========================================= */
+
+.hotel-cta {
+
+  background:
+    linear-gradient(
+      to right,
+      #0d6efd,
+      #2563eb
+    );
+
+  color: white;
+}
+
+.cta-banner {
+
+  max-width: 850px;
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.cta-banner h2 {
+
+  font-size: 3rem;
+
+  margin-bottom: 20px;
+}
+
+.cta-banner p {
+
+  font-size: 1.2rem;
+
+  margin-bottom: 35px;
+
+  line-height: 1.8;
+}
+
+.btn-primary {
+
+  display: inline-block;
+
+  text-decoration: none;
+
+  background: white;
+
+  color: #0d6efd;
+
+  padding: 15px 35px;
+
+  border-radius: 40px;
+
+  font-weight: bold;
+
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+
+  transform: translateY(-3px);
+
+  background: #f3f4f6;
+}
+
+/* =========================================
+   FEATURED HOTELS
+========================================= */
+
+.recent-hotels {
+
+  background: #f9fafb;
+}
+
+.section-header {
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+
+  font-size: 2.3rem;
+}
+
+.view-all {
+
+  text-decoration: none;
+
+  color: #0d6efd;
+
+  font-weight: bold;
+}
+
+.hotel-preview-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 30px;
+}
+
+.hotel-card-mini {
+
+  background: white;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.hotel-card-mini:hover {
+
+  transform: translateY(-8px);
+}
+
+.hotel-img-placeholder {
+
+  height: 220px;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267');
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.hotel-card-mini h4 {
+
+  padding: 20px;
+
+  font-size: 1.3rem;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .search-bar {
+
+    flex-direction: column;
+
+    border-radius: 25px;
+  }
+
+  .search-bar input,
+  .btn-search {
+
+    width: 100%;
+  }
+
+  .section-header {
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    align-items: flex-start;
+  }
+
+  .cta-banner h2 {
+
+    font-size: 2rem;
+  }
+
+  .section-title {
+
+    font-size: 2rem;
+  }
+}
+
